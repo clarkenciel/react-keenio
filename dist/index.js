@@ -49,6 +49,7 @@ var Chart = function (_React$Component) {
         if (err) {
           // Display the API error
           _this2._chart.error(err.message);
+          console.log(err);
         } else {
           var customParse = _this2.props.customFunction;
           var data = res;
