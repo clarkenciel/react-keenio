@@ -58,7 +58,9 @@ var Chart = function (_React$Component) {
             data = customParse(data);
           }
 
-          _this2._chart.parseRawData({ result: data }).labelMapping(_this2.props.labelMapping).labels(_this2.props.labels).render();
+          // make sure that we're passing an object with a result
+          // key into parseRawData	
+          _this2._chart.parseRawData(data instanceof Array ? { result: data } : data).labelMapping(_this2.props.labelMapping).labels(_this2.props.labels).render();
         }
       });
     }
