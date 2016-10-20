@@ -41,8 +41,10 @@ export default class Chart extends React.Component {
           data = customParse(data);
         }
 
+	// make sure that we're passing an object with a result
+	// key into parseRawData	
         this._chart
-          .parseRawData({ result: data.result })
+          .parseRawData(data instanceof Array ? { result: data } : data)
           .labelMapping(this.props.labelMapping)
           .labels(this.props.labels)
           .render();
