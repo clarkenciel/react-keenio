@@ -31,6 +31,7 @@ export default class Chart extends React.Component {
       if (err) {
         // Display the API error
         this._chart.error(err.message);
+	console.log(err)
       }
       else {
         const customParse = this.props.customFunction;

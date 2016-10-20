@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import KeenChart from "../../dist";
-import keen from "keen-js";
+import Keen from "keen-js";
 
 // These are taken from : https://github.com/keen/dashboards/blob/gh-pages/examples/starter-kit/keen.dashboard.js
 
@@ -22,11 +22,13 @@ const pageviews_timeline = new Keen.Query("count", {
 
 const parseData = data => {
   console.log(data);
-  return data;
+  return data
 };
 
-ReactDOM.render(
-  <KeenChart client={client} query={pageviews_timeline} chartType="linechart" title="My Chart" colors={["#49c5b1"]} customFunction={parseData}
-  />,
-  document.querySelector("#app")
-);
+Keen.ready(() => {
+  ReactDOM.render(
+      <KeenChart client={client} query={pageviews_timeline} chartType="linechart" title="My Chart" colors={["#49c5b1"]} customFunction={parseData}
+      />,
+    document.querySelector("#app")
+  );
+})
