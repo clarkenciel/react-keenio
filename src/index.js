@@ -34,7 +34,7 @@ export default class Chart extends React.Component {
       }
       else {
         const customParse = this.props.customFunction;
-        let data = res.result;
+        let data = res;
 
         // Handle the response
         if (customParse) {
