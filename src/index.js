@@ -42,7 +42,7 @@ export default class Chart extends React.Component {
         }
 
         this._chart
-          .parseRawData({ result: data })
+          .parseRawData({ result: data.result })
           .labelMapping(this.props.labelMapping)
           .labels(this.props.labels)
           .render();
